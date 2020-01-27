@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import MainReducer from './mainReducer';
+import RootReducer from './RootReducer';
 
-const mmreducers = combineReducers({
-  MainReducer,
+const reducers = combineReducers({
+  RootReducer,
 });
 
-export default mmreducers;
+export default reducers;

@@ -5,10 +5,10 @@ import './index.css';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import * as serviceWorker from './serviceWorker';
-import mmreducers from './reducers';
+import reducers from './reducers';
 import Root from './containers/root';
 
-const store = createStore(mmreducers, composeWithDevTools(
+const store = createStore(reducers, composeWithDevTools(
   applyMiddleware(thunk),
 ));
 
