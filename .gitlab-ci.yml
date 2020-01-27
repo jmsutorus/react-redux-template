@@ -1,3 +1,18 @@
+# For jobs only run on master with protected runners
+.only-master:
+  only:
+    - master
+  tags:
+    - web_platform
+    - protected
+
+# For unprotected jobs that run on all branches
+.except-schedules-triggers:
+  except:
+    - schedules
+    - triggers
+  tags:
+
 image: node:latest
 
 before_script:
@@ -11,3 +26,8 @@ eslint:
   stage: lint
   script:
     - npm run lint
+
+Test:
+  stage: test
+  script:
+    - npm test a
