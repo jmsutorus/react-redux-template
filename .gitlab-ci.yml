@@ -8,13 +8,7 @@ eslint:
   stage: lint
   script:
     # Install ESLint in this docker container
-    - npm install -g eslint
-    # Configure ESLint (will read your .eslintrc file)
-    - eslint --init
+    - npm i eslint \
+      eslint-config-airbnb
     # Run ESLint
     - eslint src/**/*.js src/**/*.jsx
-
-Test:
-  stage: test
-  script:
-    - npm test
