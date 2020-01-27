@@ -1,7 +1,8 @@
-image: react:latest
+image: node:latest
 
 stages:
   - lint
+  - test
 
 eslint:
   stage: lint
@@ -12,3 +13,8 @@ eslint:
     - eslint --init
     # Run ESLint
     - eslint src/**/*.js src/**/*.jsx
+
+Test:
+  stage: test
+  script:
+    - npm test
