@@ -1,68 +1,91 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Dashboard Frontend (ng-dashboard)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+This is a Proof of Concept for Media Master.
+Linting is done using eslint and follows airbnbs js and react style
+Configure your favorite editor to follow the rules in .eslintrc.json
+This project uses Redux for all state management
 
-### `yarn start`
+---
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Maintainer Contact Information
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Direct Contact<br>
+Joseph Sutorus<br>
+sutorus.joseph@heb.com
 
-### `yarn test`
+---
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+📝## Prerequisites
 
-### `yarn build`
+React version 16.12.0<br>
+Node version 10
+Both the frontend and the backend are required to run.
+Must be on the H-E-B network connection either through wifi or through VPN.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🚀## Getting Started
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+`git@gitlab.com:heb-engineering/teams/platform-engineering/app-dev-squad/media-master-poc-ui.git`
+Download dependencies with `npm install`<br>
+Run the frontend code with `npm start`
+Style guides can be found here
+[JS Best Practices](https://github.com/airbnb/javascript)
+[React Style Guide](https://github.com/airbnb/javascript/tree/master/react#naming)
+[CSS Style Guide](https://github.com/airbnb/css)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🧐## What's Inside?
 
-### `yarn eject`
+.
+├── src
+│   ├── actions
+│   ├── components
+│   ├── constants
+│   ├── helpers
+│   ├── hooks
+│   ├── pages
+│   └── reducers
+├── .eslintrc
+├── .gitlab-ci.yml
+├── .stylelintrc
+├── .prettierrc
+├── Dockerfile
+├── package.json
+└── yarn.lock
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **`.eslintrc`**: This is a configuration file for [EsLint](https://eslint.org/). Eslint is a tool to help developers discover problems with their JavaScript code without executing it.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. **`.gitlab-ci.yml`**: This is a configuration file for the GitLab pipelines and our build process.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. **`.stylelintrc`**: This is a configuration file for [StyleLint](https://stylelint.io/) StyleLint is a linter that helps you avoid errors and enforce conventions in your css styles.
 
-## Learn More
+5. **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+6. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+7. **`yarn.lock`** This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+🧪## Testing
 
-### Analyzing the Bundle Size
+Testing is done using Jest
+Runs tests and coverage
+`npm run test`
+Ensure that all tests pass and coverage is > 80%
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+📖## Contributing
 
-### Making a Progressive Web App
+Submit a PR for review.
+Before being merge your pipelines must pass
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+👷‍♀️👷‍♂️## Building
+N/A
 
-### Advanced Configuration
+🚢### Deploying
+N/A
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+⁉️## Monitoring & Alerting
+N/A
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

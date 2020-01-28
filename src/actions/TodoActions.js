@@ -7,10 +7,10 @@ export function addTodo(text) {
   };
 }
 
-export function removeTodo(text) {
+export function removeTodo(index) {
   return {
     type: types.REMOVE_TODO,
-    text,
+    index,
   };
 }
 
