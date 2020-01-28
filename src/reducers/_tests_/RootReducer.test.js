@@ -1,5 +1,5 @@
-import RootReducer from './RootReducer';
-import * as types from '../constants/ActionTypes';
+import RootReducer from '../RootReducer';
+import * as types from '../../constants/ActionTypes';
 
 describe('todos reducer', () => {
   it('should return the initial state', () => {

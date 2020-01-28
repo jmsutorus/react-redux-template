@@ -1,20 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import './index.css';
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { render } from 'react-dom';
 import * as serviceWorker from './serviceWorker';
-import reducers from './reducers';
-import Root from './pages/root';
+import './index.css';
+import initialize from './initialize';
+import App from './pages/layout/App/App';
+import store from './store/create';
 
-const store = createStore(reducers, composeWithDevTools(
-  applyMiddleware(thunk),
-));
+initialize({ store });
 
-ReactDOM.render(<Root store={store} />, document.getElementById('root'));
+// use hydrate you we move to server side html rendering
+if (document.getElementById('root')) {
+  render(
+    <App location={window.location} store={store} />,
+    document.getElementById('root'),
+  );
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+serviceWorker.register();
