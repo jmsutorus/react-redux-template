@@ -2,10 +2,10 @@
 
 ---
 
-This is a Proof of Concept for Media Master.
-Linting is done using eslint and follows airbnbs js and react style
-Configure your favorite editor to follow the rules in .eslintrc.json
-This project uses Redux for all state management
+This is a Proof of Concept for Media Master.<br>
+Linting is done using eslint and follows airbnbs js and react style<br>
+Configure your favorite editor to follow the rules in .eslintrc.json<br>
+This project uses Redux for all state management<br>
 
 ---
 
@@ -20,19 +20,19 @@ sutorus.joseph@heb.com
 ## 📝 Prerequisites
 
 React version 16.12.0<br>
-Node version 10
-Both the frontend and the backend are required to run.
+Node version 10<br>
+Both the frontend and the backend are required to run.<br>
 Must be on the H-E-B network connection either through wifi or through VPN.
 
 ## 🚀 Getting Started
 
 `git@gitlab.com:heb-engineering/teams/platform-engineering/app-dev-squad/media-master-poc-ui.git`
 Download dependencies with `npm install`<br>
-Run the frontend code with `npm start`
-Style guides can be found here
-[JS Best Practices](https://github.com/airbnb/javascript)
-[React Style Guide](https://github.com/airbnb/javascript/tree/master/react#naming)
-[CSS Style Guide](https://github.com/airbnb/css)
+Run the frontend code with `npm start`<br>
+Style guides can be found here<br>
+[JS Best Practices](https://github.com/airbnb/javascript)<br>
+[React Style Guide](https://github.com/airbnb/javascript/tree/master/react#naming)<br>
+[CSS Style Guide](https://github.com/airbnb/css)<br>
 
 ## 🧐 What's Inside?
 
@@ -77,15 +77,15 @@ Style guides can be found here
 
 ## 🧪 Testing
 
-Testing is done using Jest
-Runs tests and coverage
-`npm run test`
-Ensure that all tests pass and coverage is > 80%
+Testing is done using Jest<br>
+Runs tests and coverage<br>
+`npm run test`<br>
+Ensure that all tests pass and coverage is > 80%<br>
 
 ## 📖 Contributing
 
-Submit a PR for review.
-Before being merge your pipelines must pass
+Submit a PR for review.<br>
+Before being merge your pipelines must pass<br>
 
 ## 👷‍️👷‍ Building
 N/A
