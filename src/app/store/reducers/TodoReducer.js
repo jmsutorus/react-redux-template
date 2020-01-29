@@ -8,7 +8,7 @@ const initialState = [
   }
 ];
 
-function RootReducer(state = initialState, action) {
+function TodoReducer(state = initialState, action) {
   switch (action.type) {
     case types.ADD_TODO:
       return [
@@ -24,4 +24,4 @@ function RootReducer(state = initialState, action) {
   }
 }
 
-export default RootReducer;
+export default TodoReducer;

@@ -1,4 +1,4 @@
-import RootReducer from '../RootReducer';
+import RootReducer from '../TodoReducer';
 import * as types from '../../constants/ActionTypes';
 
 describe('todos reducer', () => {
