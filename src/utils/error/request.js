@@ -2,9 +2,10 @@ import { get } from 'lodash';
 
 export default class RequestError extends Error {
   constructor(error) {
-    const message = get(error, 'response.data.message')
-      || get(error, 'response.statusText', '')
-      || get(error, 'message', '');
+    const message =
+      get(error, 'response.data.message') ||
+      get(error, 'response.statusText', '') ||
+      get(error, 'message', '');
 
     super(message);
 

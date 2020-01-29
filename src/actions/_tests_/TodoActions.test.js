@@ -6,7 +6,7 @@ describe('actions', () => {
     const text = 'Finish docs';
     const expectedAction = {
       type: types.ADD_TODO,
-      text,
+      text
     };
     expect(actions.addTodo(text)).toEqual(expectedAction);
   });
@@ -14,7 +14,7 @@ describe('actions', () => {
     const index = 0;
     const expectedAction = {
       type: types.REMOVE_TODO,
-      index,
+      index
     };
     expect(actions.removeTodo(0)).toEqual(expectedAction);
   });

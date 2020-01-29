@@ -11,8 +11,8 @@ const propTypes = {
   store: PropTypes.shape({
     subscribe: PropTypes.func.isRequired,
     dispatch: PropTypes.func.isRequired,
-    getState: PropTypes.func.isRequired,
-  }).isRequired,
+    getState: PropTypes.func.isRequired
+  }).isRequired
 };
 
 const defaultProps = {};

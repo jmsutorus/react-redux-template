@@ -8,11 +8,11 @@ describe('actions', () => {
       name: 'name',
       description: 'desc',
       quantity: 1,
-      price: 1.0,
+      price: 1.0
     };
     const expectedAction = {
       type: types.ADD_PRODUCT,
-      product,
+      product
     };
     expect(actions.addProduct(product)).toEqual(expectedAction);
   });
@@ -20,7 +20,7 @@ describe('actions', () => {
     const index = '123';
     const expectedAction = {
       type: types.REMOVE_PRODUCT,
-      index,
+      index
     };
     expect(actions.removeProduct(index)).toEqual(expectedAction);
   });

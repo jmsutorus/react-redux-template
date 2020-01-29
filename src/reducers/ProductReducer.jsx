@@ -2,13 +2,13 @@ import {
   ADD_PRODUCT,
   GET_PRODUCTS_REQUEST,
   GET_PRODUCTS_FAILURE,
-  GET_PRODUCTS_SUCCESS,
+  GET_PRODUCTS_SUCCESS
 } from '../constants/ProductTypes';
 
 export const initialState = {
   loadingProductResults: false,
   productResults: null,
-  productResultsError: null,
+  productResultsError: null
 };
 
 function ProductReducer(state = initialState, action) {
@@ -17,29 +17,28 @@ function ProductReducer(state = initialState, action) {
       return {
         ...state,
         productResults: action.product,
-        productResultsError: null,
+        productResultsError: null
       };
     case GET_PRODUCTS_REQUEST:
       return {
         ...state,
         loadingProductResults: true,
         productResults: null,
-        productResultsError: null,
+        productResultsError: null
       };
     case GET_PRODUCTS_FAILURE:
       return {
         ...state,
         loadingProductResults: false,
         productResultsError:
-          (action.payload
-            ? action.payload.message || action.payload.title
-            : '') || 'An unknown error occured.',
+          (action.payload ? action.payload.message || action.payload.title : '') ||
+          'An unknown error occured.'
       };
     case GET_PRODUCTS_SUCCESS:
       return {
         ...state,
         loadingProductResults: false,
-        productResults: action.payload,
+        productResults: action.payload
       };
     default:
       return state;

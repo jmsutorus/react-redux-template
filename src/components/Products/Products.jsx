@@ -3,12 +3,10 @@ import { useSelector } from 'react-redux';
 import Product from '../Product';
 
 function Products() {
-  const products = useSelector((state) => state.ProductReducer.productResults);
+  const products = useSelector(state => state.ProductReducer.productResults);
   return (
     <div>
-      {products && products.map((product) => (
-        <Product key={product.upc} product={product} />
-      ))}
+      {products && products.map(product => <Product key={product.upc} product={product} />)}
     </div>
   );
 }

@@ -2,11 +2,7 @@ import { useEffect, useRef } from 'react';
 
 const clientWindow = typeof window !== 'undefined' ? window : undefined;
 
-export default function useEventListener(
-  eventName,
-  handler,
-  element = clientWindow,
-) {
+export default function useEventListener(eventName, handler, element = clientWindow) {
   const savedHandler = useRef();
 
   // Update ref.current value if handler changes.
@@ -19,7 +15,7 @@ export default function useEventListener(
 
   useEffect(() => {
     // Create event listener that calls handler function stored in ref
-    const eventListener = (event) => savedHandler.current(event);
+    const eventListener = event => savedHandler.current(event);
 
     element.addEventListener(eventName, eventListener);
 

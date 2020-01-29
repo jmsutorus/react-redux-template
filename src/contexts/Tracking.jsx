@@ -6,55 +6,46 @@ export const TrackingAPIContext = createContext();
 export const TrackingContext = createContext();
 
 export function TrackingProvider({ children, tracking }) {
-  return (
-    <TrackingAPIContext.Provider value={tracking}>
-      {children}
-    </TrackingAPIContext.Provider>
-  );
+  return <TrackingAPIContext.Provider value={tracking}>{children}</TrackingAPIContext.Provider>;
 }
 
 TrackingProvider.propTypes = {
   children: PropTypes.node.isRequired,
   tracking: PropTypes.shape({
-    track: PropTypes.func.isRequired,
-  }).isRequired,
+    track: PropTypes.func.isRequired
+  }).isRequired
 };
 
 export function TrackingRegion({ children, trackingCategory, trackingAction }) {
   const parentContext = useContext(TrackingContext);
   // create a new context only if props change
   const newContext = useMemo(
-    () => merge({}, parentContext, {
-      category: trackingCategory,
-      action: trackingAction,
-    }),
-    [parentContext, trackingAction, trackingCategory],
+    () =>
+      merge({}, parentContext, {
+        category: trackingCategory,
+        action: trackingAction
+      }),
+    [parentContext, trackingAction, trackingCategory]
   );
-  return (
-    <TrackingContext.Provider value={newContext}>
-      {children}
-    </TrackingContext.Provider>
-  );
+  return <TrackingContext.Provider value={newContext}>{children}</TrackingContext.Provider>;
 }
 
 TrackingRegion.propTypes = {
   children: PropTypes.node.isRequired,
   trackingCategory: PropTypes.string,
-  trackingAction: PropTypes.string,
+  trackingAction: PropTypes.string
 };
 
 TrackingRegion.defaultProps = {
   trackingAction: undefined,
-  trackingCategory: undefined,
+  trackingCategory: undefined
 };
 
 export function useTrackingAPIContext() {
   const context = useContext(TrackingAPIContext);
 
   if (context === undefined) {
-    throw new Error(
-      'useTrackingContext must be used within a TrackingProvider',
-    );
+    throw new Error('useTrackingContext must be used within a TrackingProvider');
   }
   return context;
 }

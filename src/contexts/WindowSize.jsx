@@ -7,7 +7,7 @@ import useEventListener from '../hooks/useEventListener';
 export const WindowSizeContext = createContext();
 
 const defaultProps = {
-  children: null,
+  children: null
 };
 
 export function WindowSizeProvider({ children }) {
@@ -15,37 +15,31 @@ export function WindowSizeProvider({ children }) {
 
   const [windowSize, setWindowSize] = useState({
     width: isClient ? window.innerWidth : 0,
-    height: isClient ? window.innerHeigh : 0,
+    height: isClient ? window.innerHeigh : 0
   });
 
   const updateWindowSize = throttle(() => {
     setWindowSize({
       width: window.innerWidth,
-      height: window.innerHeight,
+      height: window.innerHeight
     });
   }, 200);
 
   useEventListener('resize', updateWindowSize);
 
-  return (
-    <WindowSizeContext.Provider value={windowSize}>
-      {children}
-    </WindowSizeContext.Provider>
-  );
+  return <WindowSizeContext.Provider value={windowSize}>{children}</WindowSizeContext.Provider>;
 }
 
 WindowSizeProvider.defaultProps = defaultProps;
 WindowSizeProvider.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 
 export function useWindowSizeContext() {
   const context = useContext(WindowSizeContext);
 
   if (context === undefined) {
-    throw new Error(
-      'useWindowSizeContext must be used within a WindowSizeProvider',
-    );
+    throw new Error('useWindowSizeContext must be used within a WindowSizeProvider');
   }
 
   return context;

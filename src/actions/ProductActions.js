@@ -4,20 +4,20 @@ import {
   REMOVE_PRODUCT,
   GET_PRODUCTS_REQUEST,
   GET_PRODUCTS_FAILURE,
-  GET_PRODUCTS_SUCCESS,
+  GET_PRODUCTS_SUCCESS
 } from '../constants/ProductTypes';
 
 export function addProduct(product) {
   return {
     type: ADD_PRODUCT,
-    product,
+    product
   };
 }
 
 export function removeProduct(index) {
   return {
     type: REMOVE_PRODUCT,
-    index,
+    index
   };
 }
 
@@ -27,13 +27,13 @@ export function getProducts() {
       method: 'GET',
       endpoint: 'http://172.19.26.124:8089/labelPOC/product/all',
       types: [GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS, GET_PRODUCTS_FAILURE],
-      data: {},
-    },
+      data: {}
+    }
   };
 }
 
 export default {
   addProduct,
   removeProduct,
-  getProducts,
+  getProducts
 };

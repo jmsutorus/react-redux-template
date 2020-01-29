@@ -10,10 +10,7 @@ initialize({ store });
 
 // use hydrate you we move to server side html rendering
 if (document.getElementById('root')) {
-  render(
-    <App location={window.location} store={store} />,
-    document.getElementById('root'),
-  );
+  render(<App location={window.location} store={store} />, document.getElementById('root'));
 }
 
 serviceWorker.register();

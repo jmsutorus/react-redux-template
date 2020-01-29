@@ -9,8 +9,8 @@ describe('todos reducer', () => {
         name: '',
         description: '',
         quantity: 0,
-        price: 0.0,
-      },
+        price: 0.0
+      }
     ]);
   });
   it('should handle ADD_PRODUCT', () => {
@@ -22,17 +22,17 @@ describe('todos reducer', () => {
           name: 'name',
           description: 'desc',
           quantity: 1,
-          price: 1.0,
-        },
-      }),
+          price: 1.0
+        }
+      })
     ).toEqual([
       {
         upc: '123',
         name: 'name',
         description: 'desc',
         quantity: 1,
-        price: 1.0,
-      },
+        price: 1.0
+      }
     ]);
     expect(
       ProductReducer([], {
@@ -42,17 +42,17 @@ describe('todos reducer', () => {
           name: 'name2',
           description: 'desc2',
           quantity: 2,
-          price: 2.0,
-        },
-      }),
+          price: 2.0
+        }
+      })
     ).toEqual([
       {
         upc: '456',
         name: 'name2',
         description: 'desc2',
         quantity: 2,
-        price: 2.0,
-      },
+        price: 2.0
+      }
     ]);
   });
 });

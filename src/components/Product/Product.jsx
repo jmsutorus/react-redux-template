@@ -7,8 +7,8 @@ const propTypes = {
     upc: PropTypes.string,
     description: PropTypes.string,
     quantity: PropTypes.number,
-    price: PropTypes.number,
-  }).isRequired,
+    price: PropTypes.number
+  }).isRequired
 };
 
 const defaultProps = {};
@@ -16,8 +16,8 @@ const defaultProps = {};
 function Product({ product }) {
   return (
     <div>
-      { product.name }
-      { product.description }
+      <span>{product.name}</span>
+      <span>{product.description}</span>
     </div>
   );
 }

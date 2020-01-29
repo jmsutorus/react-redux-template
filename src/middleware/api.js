@@ -13,27 +13,27 @@ export function APIRequest(
     method: 'GET',
     headers: {},
     query: {},
-    data: {},
-  },
+    data: {}
+  }
 ) {
   return axios({
     url,
     params: options.query,
     data: options.data,
     headers: { ...defaultHeaders, ...options.headers },
-    ...options,
+    ...options
   })
     .then(({ data }) => data)
-    .catch((error) => {
+    .catch(error => {
       throw new RequestError(error);
     });
 }
 
-export default () => (next) => (action) => {
+export default () => next => action => {
   if (!action || !Object.prototype.hasOwnProperty.call(action, CALL_API)) {
     return next(action);
   }
-  const actionWith = (actionData) => omit({ ...action, ...actionData }, CALL_API);
+  const actionWith = actionData => omit({ ...action, ...actionData }, CALL_API);
 
   const APIaction = action[CALL_API];
 
@@ -42,48 +42,55 @@ export default () => (next) => (action) => {
       // Action Types
       requestType,
       successType,
-      failureType,
+      failureType
     ],
     endpoint, // API Endpoint
     method, // REST Method
     data, // Post Data
     query, // Query Params
-    meta, // Action Meta
+    meta // Action Meta
   } = APIaction;
 
   next(
-    actionWith(omitBy({
-      type: requestType, meta, query, data,
-    }, isUndefined)),
+    actionWith(
+      omitBy(
+        {
+          type: requestType,
+          meta,
+          query,
+          data
+        },
+        isUndefined
+      )
+    )
   );
 
   const options = {
     headers: {},
     method: method || 'GET',
     data,
-    query,
+    query
   };
 
   return APIRequest(endpoint, options)
-    .then((payload) => next(
-      actionWith({
-        type: successType,
-        meta,
-        payload,
-      }),
-    ))
-    .catch(({
-      error, status, message, response,
-    }) => next(
-      actionWith({
-        type: failureType,
-        meta,
-        status,
-        error:
-          message
-          || (error && error.message)
-          || 'Something really bad happened',
-        payload: response,
-      }),
-    ));
+    .then(payload =>
+      next(
+        actionWith({
+          type: successType,
+          meta,
+          payload
+        })
+      )
+    )
+    .catch(({ error, status, message, response }) =>
+      next(
+        actionWith({
+          type: failureType,
+          meta,
+          status,
+          error: message || (error && error.message) || 'Something really bad happened',
+          payload: response
+        })
+      )
+    );
 };
