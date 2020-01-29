@@ -17,14 +17,14 @@ sutorus.joseph@heb.com
 
 ---
 
-📝## Prerequisites
+## 📝 Prerequisites
 
 React version 16.12.0<br>
 Node version 10
 Both the frontend and the backend are required to run.
 Must be on the H-E-B network connection either through wifi or through VPN.
 
-🚀## Getting Started
+## 🚀 Getting Started
 
 `git@gitlab.com:heb-engineering/teams/platform-engineering/app-dev-squad/media-master-poc-ui.git`
 Download dependencies with `npm install`<br>
@@ -34,7 +34,7 @@ Style guides can be found here
 [React Style Guide](https://github.com/airbnb/javascript/tree/master/react#naming)
 [CSS Style Guide](https://github.com/airbnb/css)
 
-🧐## What's Inside?
+## 🧐 What's Inside?
 
     .
     ├── app
@@ -75,23 +75,23 @@ Style guides can be found here
 
 8. **`yarn.lock`** This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
-🧪## Testing
+## 🧪 Testing
 
 Testing is done using Jest
 Runs tests and coverage
 `npm run test`
 Ensure that all tests pass and coverage is > 80%
 
-📖## Contributing
+## 📖 Contributing
 
 Submit a PR for review.
 Before being merge your pipelines must pass
 
-👷‍♀️👷‍♂️## Building
+## 👷‍️👷‍ Building
 N/A
 
-🚢### Deploying
+### 🚢 Deploying
 N/A
 
-⁉️## Monitoring & Alerting
+## ⁉️ Monitoring & Alerting
 N/A
