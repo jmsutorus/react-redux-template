@@ -15,4 +15,4 @@ Lint:
 Test:
   stage: test
   script:
-    - npm test a
+    - yarn test --coverage --watchAll=false

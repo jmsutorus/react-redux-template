@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "color-no-invalid-hex": true,
+    "statement-max-nesting-depth": [1, { countAtRules: false }],
+  }
+  "plugins": [
+    "stylelint-statement-max-nesting-depth"
+  ],
+}

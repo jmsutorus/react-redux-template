@@ -4,24 +4,24 @@ const initialState = [
   {
     text: 'Use Redux',
     completed: false,
-    id: 0,
-  },
+    id: 0
+  }
 ];
 
-function RootReducer(state = initialState, action) {
+function TodoReducer(state = initialState, action) {
   switch (action.type) {
     case types.ADD_TODO:
       return [
         {
           id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
           completed: false,
-          text: action.text,
+          text: action.text
         },
-        ...state,
+        ...state
       ];
     default:
       return state;
   }
 }
 
-export default RootReducer;
+export default TodoReducer;

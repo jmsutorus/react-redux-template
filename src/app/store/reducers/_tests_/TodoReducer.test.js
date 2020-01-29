@@ -1,5 +1,5 @@
-import RootReducer from './RootReducer';
-import * as types from '../constants/ActionTypes';
+import RootReducer from '../TodoReducer';
+import * as types from '../../constants/ActionTypes';
 
 describe('todos reducer', () => {
   it('should return the initial state', () => {
@@ -7,22 +7,22 @@ describe('todos reducer', () => {
       {
         text: 'Use Redux',
         completed: false,
-        id: 0,
-      },
+        id: 0
+      }
     ]);
   });
   it('should handle ADD_TODO', () => {
     expect(
       RootReducer([], {
         type: types.ADD_TODO,
-        text: 'Run the tests',
-      }),
+        text: 'Run the tests'
+      })
     ).toEqual([
       {
         text: 'Run the tests',
         completed: false,
-        id: 0,
-      },
+        id: 0
+      }
     ]);
     expect(
       RootReducer(
@@ -30,25 +30,25 @@ describe('todos reducer', () => {
           {
             text: 'Use Redux',
             completed: false,
-            id: 0,
-          },
+            id: 0
+          }
         ],
         {
           type: types.ADD_TODO,
-          text: 'Run the tests',
-        },
-      ),
+          text: 'Run the tests'
+        }
+      )
     ).toEqual([
       {
         text: 'Run the tests',
         completed: false,
-        id: 1,
+        id: 1
       },
       {
         text: 'Use Redux',
         completed: false,
-        id: 0,
-      },
+        id: 0
+      }
     ]);
   });
 });
