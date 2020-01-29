@@ -3,8 +3,8 @@ import { render } from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
 import initialize from './initialize';
-import App from './pages/layout/App/App';
-import store from './store/create';
+import App from './app/pages/layout/App/App';
+import store from './app/store/create';
 
 initialize({ store });
 

@@ -1,4 +1,4 @@
-# Dashboard Frontend (ng-dashboard)
+# Media Master POC
 
 ---
 
@@ -36,37 +36,44 @@ Style guides can be found here
 
 🧐## What's Inside?
 
-.
-├── src
-│   ├── actions
-│   ├── components
-│   ├── constants
-│   ├── helpers
-│   ├── hooks
-│   ├── pages
-│   └── reducers
-├── .eslintrc
-├── .gitlab-ci.yml
-├── .stylelintrc
-├── .prettierrc
-├── Dockerfile
-├── package.json
-└── yarn.lock
+    .
+    ├── app
+    │   ├── components
+    │   ├── contexts
+    │   ├── helpers
+    │   ├── hooks
+    │   ├── pages
+    │   ├── store
+    │   │   ├── actions
+    │   │   ├── constants
+    │   │   ├── reducers
+    │   │   ├── selectors
+    │   │   └── create.js
+    │   └── utils
+    ├── .babelrc
+    ├── .eslintrc
+    ├── .gitlab-ci.yml
+    ├── .stylelintrc
+    ├── .prettierrc
+    ├── Dockerfile
+    ├── package.json
+    └── yarn.lock
 
-1. **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser).
+1. **`/app`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser).
 
-2. **`.eslintrc`**: This is a configuration file for [EsLint](https://eslint.org/). Eslint is a tool to help developers discover problems with their JavaScript code without executing it.
+2. **`.babelrc`**: This is a configuration file for [Babel](https://babeljs.io/) Babel is mainly used to convert ECMAScript code into a backwards compatible version of JavaScript in current and older browsers or environments.
 
-3. **`.gitlab-ci.yml`**: This is a configuration file for the GitLab pipelines and our build process.
+3. **`.eslintrc`**: This is a configuration file for [EsLint](https://eslint.org/). Eslint is a tool to help developers discover problems with their JavaScript code without executing it.
 
-4. **`.stylelintrc`**: This is a configuration file for [StyleLint](https://stylelint.io/) StyleLint is a linter that helps you avoid errors and enforce conventions in your css styles.
+4. **`.gitlab-ci.yml`**: This is a configuration file for the GitLab pipelines and our build process.
 
-5. **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+5. **`.stylelintrc`**: This is a configuration file for [StyleLint](https://stylelint.io/) StyleLint is a linter that helps you avoid errors and enforce conventions in your css styles.
 
-6. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+6. **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
 
-7. **`yarn.lock`** This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+7. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
+8. **`yarn.lock`** This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
 🧪## Testing
 
@@ -88,4 +95,3 @@ N/A
 
 ⁉️## Monitoring & Alerting
 N/A
-

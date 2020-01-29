@@ -1,4 +1,4 @@
-import { CALL_API } from '../middleware/api';
+import { CALL_API } from '../../middleware/api';
 import {
   ADD_PRODUCT,
   REMOVE_PRODUCT,

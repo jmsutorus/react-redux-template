@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import middleware from '../middleware';
-import reducers from '../reducers';
+import reducers from './reducers';
 
 export function configureStore(initialState = {}) {
   return createStore(reducers, initialState, composeWithDevTools(applyMiddleware(...middleware)));
