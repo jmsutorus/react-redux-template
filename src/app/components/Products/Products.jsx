@@ -1,8 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Product from '../Product';
+import { getProducts } from '../../store/actions/ProductActions';
 
 function Products() {
+  const dispatch = useDispatch();
+  dispatch(getProducts());
   const products = useSelector(state => state.ProductReducer.productResults);
   return (
     <div title="products">

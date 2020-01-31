@@ -19,6 +19,20 @@ function TodoReducer(state = initialState, action) {
         },
         ...state
       ];
+    case types.REMOVE_TODO:
+      return state.filter(item => {
+        if (item.id === action.id) {
+          return false;
+        }
+        return true;
+      });
+    case types.COMPLETE_TODO:
+      return state.map(item => {
+        if (item.id === action.id) {
+          return { ...item, completed: true };
+        }
+        return item;
+      });
     default:
       return state;
   }

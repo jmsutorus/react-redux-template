@@ -7,13 +7,19 @@ export function addTodo(text) {
   };
 }
 
-export function removeTodo(index) {
+export function removeTodo(id) {
   return {
     type: types.REMOVE_TODO,
-    index
+    id
   };
 }
 
+export function completeTodo(id) {
+  return {
+    type: types.COMPLETE_TODO,
+    id
+  };
+}
 export default {
   addTodo,
   removeTodo

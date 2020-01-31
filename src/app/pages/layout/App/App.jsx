@@ -1,11 +1,13 @@
 import React, { StrictMode } from 'react';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Header from '../Header';
 import Footer from '../Footer';
 import './App.scss';
-import { getProducts } from '../../../store/actions/ProductActions';
 import AppProvider from '../../../contexts/AppProvider';
 import Products from '../../../components/Products';
+import NotFound from '../NotFound';
+import Home from '../Home';
 
 const propTypes = {
   store: PropTypes.shape({
@@ -18,15 +20,19 @@ const propTypes = {
 const defaultProps = {};
 
 function App({ store }) {
-  store.dispatch(getProducts());
   return (
     <AppProvider store={store}>
       <StrictMode>
-        <Header />
-        <main>
-          <Products />
-        </main>
-        <Footer />
+        <BrowserRouter>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Products} />
+            <Route path="/home" component={Home} />
+            <Route path="/products" component={Products} />
+            <Route component={NotFound} />
+          </Switch>
+          <Footer />
+        </BrowserRouter>
       </StrictMode>
     </AppProvider>
   );
