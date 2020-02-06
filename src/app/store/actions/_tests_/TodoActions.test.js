@@ -11,10 +11,10 @@ describe('actions', () => {
     expect(actions.addTodo(text)).toEqual(expectedAction);
   });
   it('should remove an action to from the products', () => {
-    const index = 0;
+    const id = 0;
     const expectedAction = {
       type: types.REMOVE_TODO,
-      index
+      id
     };
     expect(actions.removeTodo(0)).toEqual(expectedAction);
   });
