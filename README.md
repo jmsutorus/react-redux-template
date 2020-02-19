@@ -1,4 +1,4 @@
-# Media Master POC
+# React Redux Template
 
 ---
 
